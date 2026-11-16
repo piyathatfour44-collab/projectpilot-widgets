@@ -1,17 +1,15 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
-html,body{margin:0;height:100%;background:#0B0614;font-family:ui-monospace,Menlo,Consolas,monospace;overflow:hidden}
-.w{position:relative;height:100%;min-height:120px;box-sizing:border-box;padding:18px 26px;display:flex;align-items:center;border:1px solid #B026FF;border-radius:10px;
-background:linear-gradient(100deg,#1a0b2e 0%,#3a0f5c 45%,#7a1fb0 80%,#4a148c 100%)}
-.n{position:absolute;top:12px;left:12px;width:22px;height:22px;border-radius:50%;background:#F5FF3B;color:#0B0614;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-h1{margin:0;font-size:clamp(28px,6vw,52px);letter-spacing:.16em;font-weight:900;color:#fff;text-shadow:0 0 6px #FF2BD6,0 0 18px #FF2BD6,0 0 36px #B026FF}
-.bar{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:linear-gradient(90deg,transparent,#FF2BD6,#B026FF,#00E5FF,transparent)}
-/* Light theme: matches the Home cover (teal to pink). Dark mode keeps the neon look. */
-@media (prefers-color-scheme: light){
-html,body,button{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important}
-html,body{background:transparent}
-.w{border:none;border-radius:14px;background:linear-gradient(180deg,#8FD3D8 0%,#B9C3C6 55%,#D9948F 100%)}
-h1{color:#fff;text-shadow:0 2px 10px rgba(60,40,80,.35)}
-.bar{background:linear-gradient(90deg,transparent,#fff,transparent);opacity:.7}
-}
-</style></head><body><div class="w"><h1>PROJECT·PILOT</h1><div class="bar"></div></div></body></html>
+:root{--bg:#fff;--card:#fff;--ink:#18181B;--mu:#71717A;--ln:#E4E4E7;--soft:#F4F4F5;--blue:#DBEAFE;--blueT:#1E40AF;--green:#DCFCE7;--greenT:#166534;
+--chrome:radial-gradient(circle at 35% 30%,#fff 0,#E4E4E7 18%,#A1A1AA 42%,#3F3F46 72%,#D4D4D8 100%)}
+@media (prefers-color-scheme: dark){:root{--bg:#191919;--card:#202020;--ink:#F4F4F5;--mu:#A1A1AA;--ln:#2F2F2F;--soft:#2A2A2A;--blue:#1E3A8A;--blueT:#DBEAFE;--green:#14532D;--greenT:#DCFCE7}}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.w{height:100%;box-sizing:border-box;background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.h{font-size:13px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.sub{font-size:12px;color:var(--mu)}
+.sphere{border-radius:50%;background:var(--chrome);box-shadow:0 14px 28px rgba(0,0,0,.18)}
+.w{display:flex;align-items:center;justify-content:space-between;min-height:120px;overflow:hidden;background:linear-gradient(90deg,var(--card) 40%,var(--soft))}
+h1{margin:0;font-size:clamp(28px,6vw,48px);font-weight:800;letter-spacing:-.03em}
+.sphere{width:96px;height:96px;flex:none;margin-right:6px}
+html,body{overflow:hidden}
+</style></head><body><div class="w"><div><h1>ProjectPilot</h1><div class="sub" style="font-size:14px;margin-top:4px">Manage your projects and tasks in one place.</div></div><div class="sphere"></div></div></body></html>

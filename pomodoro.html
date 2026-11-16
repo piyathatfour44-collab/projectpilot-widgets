@@ -1,35 +1,30 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
-html,body{margin:0;height:100%;background:#0B0614;font-family:ui-monospace,Menlo,Consolas,monospace;color:#E9E6FF}
-.w{height:100%;min-height:220px;box-sizing:border-box;border:1px solid #B026FF;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
-background:radial-gradient(circle at 50% 0%,rgba(176,38,255,.35),transparent 60%),#0B0614}
-.h{font-size:12px;letter-spacing:.3em;color:#00E5FF}
-.t{font-size:56px;font-weight:800;color:#FF2BD6;text-shadow:0 0 10px #FF2BD6,0 0 28px #B026FF}
-.r{display:flex;gap:8px}
-button{font:inherit;font-size:13px;letter-spacing:.15em;background:transparent;color:#00E5FF;border:1px solid #00E5FF;padding:8px 14px;cursor:pointer}
-button.p{background:#FF2BD6;color:#0B0614;border-color:#FF2BD6;font-weight:700}
-.m{display:flex;gap:6px}.m button{font-size:11px;padding:4px 8px;color:#B9B3E0;border-color:#4a3a6e}
-.m button.on{color:#F5FF3B;border-color:#F5FF3B}
-/* Light theme: matches the Home cover (teal to pink). Dark mode keeps the neon look. */
-@media (prefers-color-scheme: light){
-html,body,button{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important}
-html,body{background:transparent;color:#2E3550}
-.w{border:none;border-radius:14px;background:linear-gradient(180deg,#8FD3D8,#D9948F)}
-.h{color:#fff;font-weight:700}.t{color:#fff;text-shadow:0 2px 12px rgba(60,40,80,.35)}
-button{color:#2E3550;border-color:#fff;background:rgba(255,255,255,.35);border-radius:8px}
-button.p{background:#fff;color:#C0606A;border-color:#fff}
-.m button{color:#2E3550;border-color:rgba(255,255,255,.7)}.m button.on{color:#fff;border-color:#fff;background:rgba(255,255,255,.2)}
-}
+:root{--bg:#fff;--card:#fff;--ink:#18181B;--mu:#71717A;--ln:#E4E4E7;--soft:#F4F4F5;--blue:#DBEAFE;--blueT:#1E40AF;--green:#DCFCE7;--greenT:#166534;
+--chrome:radial-gradient(circle at 35% 30%,#fff 0,#E4E4E7 18%,#A1A1AA 42%,#3F3F46 72%,#D4D4D8 100%)}
+@media (prefers-color-scheme: dark){:root{--bg:#191919;--card:#202020;--ink:#F4F4F5;--mu:#A1A1AA;--ln:#2F2F2F;--soft:#2A2A2A;--blue:#1E3A8A;--blueT:#DBEAFE;--green:#14532D;--greenT:#DCFCE7}}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.w{height:100%;box-sizing:border-box;background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.h{font-size:13px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.sub{font-size:12px;color:var(--mu)}
+.sphere{border-radius:50%;background:var(--chrome);box-shadow:0 14px 28px rgba(0,0,0,.18)}
+.w{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:220px}
+.t{font-size:56px;font-weight:800;letter-spacing:-.03em}
+.r,.m{display:flex;gap:8px}
+button{font:inherit;font-size:13px;font-weight:600;background:var(--card);color:var(--ink);border:1px solid var(--ln);border-radius:8px;padding:8px 16px;cursor:pointer}
+button.p{background:var(--ink);color:var(--card);border-color:var(--ink)}
+.m button{font-size:12px;padding:4px 10px;border-radius:99px;color:var(--mu);background:var(--soft);border-color:transparent}
+.m button.on{background:var(--blue);color:var(--blueT)}
 </style></head><body><div class="w">
-<div class="h">◢ FOCUS</div><div class="t" id="t">25:00</div>
-<div class="m"><button class="on" data-m="25">pomodoro</button><button data-m="5">short break</button><button data-m="15">long break</button></div>
-<div class="r"><button class="p" id="s">START</button><button id="x">RESET</button></div></div>
+<div class="h">Focus</div><div class="t" id="t">25:00</div>
+<div class="m"><button class="on" data-m="25">Pomodoro</button><button data-m="5">Short break</button><button data-m="15">Long break</button></div>
+<div class="r"><button class="p" id="s">Start</button><button id="x">Reset</button></div></div>
 <script>
 var len=25*60,left=len,run=null,end=0,T=document.getElementById('t'),S=document.getElementById('s');
 function show(){var m=Math.floor(left/60),s=left%60;T.textContent=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;}
-function tick(){left=Math.max(0,Math.round((end-Date.now())/1000));show();if(!left){stop();T.textContent='DONE';}}
-function stop(){clearInterval(run);run=null;S.textContent='START';}
-S.onclick=function(){if(run){stop();return;}if(!left)left=len;end=Date.now()+left*1000;run=setInterval(tick,250);S.textContent='PAUSE';};
+function tick(){left=Math.max(0,Math.round((end-Date.now())/1000));show();if(!left){stop();T.textContent='Done';}}
+function stop(){clearInterval(run);run=null;S.textContent='Start';}
+S.onclick=function(){if(run){stop();return;}if(!left)left=len;end=Date.now()+left*1000;run=setInterval(tick,250);S.textContent='Pause';};
 document.getElementById('x').onclick=function(){stop();left=len;show();};
 document.querySelectorAll('.m button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.m button').forEach(function(c){c.classList.remove('on')});b.classList.add('on');stop();len=left=b.dataset.m*60;show();}});
 </script></body></html>
