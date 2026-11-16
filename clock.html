@@ -5,6 +5,13 @@ html,body{margin:0;height:100%;background:#0B0614;font-family:ui-monospace,Menlo
 .h{font-size:12px;letter-spacing:.3em;color:#FF2BD6;font-weight:700}
 .t{font-size:52px;font-weight:800;color:#F5FF3B;text-shadow:0 0 10px rgba(245,255,59,.7);text-align:center;letter-spacing:.04em}
 .d{font-size:12px;letter-spacing:.25em;color:#00E5FF;text-align:center}
+/* Light theme: matches the Home cover (teal to pink). Dark mode keeps the neon look. */
+@media (prefers-color-scheme: light){
+html,body,button{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important}
+html,body{background:transparent;color:#2E3550}
+.w{border:none;border-radius:14px;background:linear-gradient(160deg,#A6DDE0,#E7B3B0)}
+.h{color:#fff}.t{color:#2E3550;text-shadow:none}.d{color:#4A5272}
+}
 </style></head><body><div class="w"><div class="h">◢ CLOCK</div><div class="t" id="t">--:--</div><div class="d" id="d"></div></div>
 <script>
 function u(){var n=new Date(),o={timeZone:'Asia/Bangkok'};

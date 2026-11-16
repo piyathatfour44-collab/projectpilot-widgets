@@ -6,6 +6,13 @@ html,body{margin:0;height:100%;background:#0B0614;font-family:ui-monospace,Menlo
 .r{display:flex;gap:8px}.c{text-align:center}
 .n{min-width:54px;padding:6px 4px;background:#140C24;border:1px solid #FF2BD6;color:#F5FF3B;font-size:30px;font-weight:800;text-shadow:0 0 8px rgba(245,255,59,.6)}
 .l{font-size:10px;letter-spacing:.2em;color:#B9B3E0;margin-top:4px}
+/* Light theme: matches the Home cover (teal to pink). Dark mode keeps the neon look. */
+@media (prefers-color-scheme: light){
+html,body,button{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif !important}
+html,body{background:transparent;color:#2E3550}
+.w{border:none;border-radius:14px;background:linear-gradient(100deg,#8FD3D8,#D9948F)}
+.h{color:#fff;font-weight:700}.n{background:rgba(255,255,255,.75);border:none;border-radius:8px;color:#2E3550;text-shadow:none}.l{color:#fff}
+}
 </style></head><body><div class="w"><div class="h">◢ GO-LIVE · 28 NOV</div>
 <div class="r"><div class="c"><div class="n" id="d">00</div><div class="l">DAYS</div></div><div class="c"><div class="n" id="h">00</div><div class="l">HRS</div></div><div class="c"><div class="n" id="m">00</div><div class="l">MIN</div></div><div class="c"><div class="n" id="s">00</div><div class="l">SEC</div></div></div></div>
 <script>
